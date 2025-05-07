@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Landing page Safe Child</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./images/favicon.png" type="image/png" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        customBlue: '#5CAFF8',
+                        customSkyBlue: '#6DD8F0',
+                        customDarkBlue: '#0D3A5A',
+                        customYellow: '#E1D568',
+                        customVerySkyBlue: '#65C1C0',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <main class="bg-[#F5F5F5]">
+        <header class="bg-white">
+            <nav class="container mx-auto flex justify-between items-center py-00 px-20" aria-label="Main Navigation">
+                <a href="/" class="flex flex-row items-center gap-2" aria-label="Safe Child Home">
+                    <div class="h-40 w-40 rounded-full flex justify-center items-center" aria-hidden="true">
+                        <img src="./images/favicon.png" alt="Safe Child Logo" />
+                    </div>                
+                </a>
+                <ul class="hidden sm:flex flex-row gap-8 text-xl font-bold" role="menubar">
+                    <li role="none">
+                        <a href="#home" role="menuitem">Home</a>
+                    </li>
+                    <li role="none">
+                        <a href="#about" role="menuitem">Why Choose Us?</a>
+                    </li>
+                    <li role="none">
+                        <a href="#contact" role="menuitem">Contact</a>
+                    </li>
+                    <li role="none">
+                        <a href="#subscriptions" role="menuitem">Subscriptions</a>
+                    </li>
+                </ul>
+                <div class="flex flex-row gap-2">
+                    <button class="bg-customDarkBlue text-white p-3 rounded-3xl font-light text-xl" aria-label="Sign in to Safe Child" onclick="window.location.href='https://synapsoft-17dc0.web.app/login'">Sign in</button>
+                    <button class="rounded-3xl border-2 border-customSkyBlue text-clifford p-3 text-xl" aria-label="Sign up for Safe Child" onclick="window.location.href='https://synapsoft-17dc0.web.app/login'">Sign up</button>
+            </div>
+            </nav>
+        </header>
+        
+        <section id="home" class="flex flex-col sm:grid grid-cols-12 gap-8 px-4 py-16 container mx-auto" aria-labelledby="hero-heading">
+            <div class="col-span-6 flex flex-col justify-center gap-8 sm:pl-1">
+                <h2 id="hero-heading" class="ml-10 text-3xl lg:text-6xl text-center sm:text-start font-bold">Connecting Families with Trusted 
+                    Caregivers and Teachers
+                </h2>
+            </div>
+            <div class="col-span-6">
+                <div class="relative h-[400px] flex flex-col justify-center items-center" aria-hidden="true">
+                    <img src="./images/p1.png" alt="Screenshot of Pawfect Care software" class="lg:max-h-[500px] w-auto p-4 rounded-full">
+                </div>
+                
+            </div>
+        </section>
+        
+            <p class="col-span-12 text-center text-xl font-bold" aria-live="polite">Our platform helps over 3,000 families 
+                find trusted babysitters and qualified tutors, ensuring quality care and education for their children.
+
+
+
+
+
+
+            </p>
+  </section>
+
+  <section id="about" class="container mx-auto flex flex-col gap-10 py-16" aria-labelledby="why-choose-us-heading">
+  <h2 id="why-choose-us-heading" class="text-3xl sm:text-6xl text-center font-bold">Why Choose Us?</h2>
+  <div class="flex flex-col sm:grid grid-cols-12 gap-4 sm:gap-6 lg:gap-6 max-w-[400px] sm:max-w-[700px] lg:max-w-[1200px] mx-auto">
+      <div class="col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-8"role="region" aria-labelledby="speed-service-title">
+          <div class="h-24 w-24 rounded-full p-4 bg-clifford flex justify-center items-center"aria-hidden="true">
+              <img src="./images/speed.png" alt="Speed service logo" />
+          </div>
+          <h3 id="speed-service-title" class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Fast and Always Available</h3>
+          <p class="font-light text-[16px] sm:text-xl text-center">Our platform connects parents with trusted caregivers, letting you focus
+             on your child's care and education.
+
+          </p>
+      </div>
+
+      <div class="col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-8"
+          role="region" aria-labelledby="multiplatform-service-title">
+          <div class="h-24 w-24 rounded-full p-4 bg-clifford flex justify-center items-center"
+              aria-hidden="true">
+              <img src="./images/multiplatform.png" alt="Multiplatform service logo" />
+          </div>
+          <h3 id="multiplatform-service-title"
+              class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Access from Any Device</h3>
+          <p class="font-light text-[16px] sm:text-xl text-center">Use our platform on any device to connect with nannies, 
+            manage appointments, and ensure your child's care from anywhere.
+          </p>
+      </div>
+
+      <div class="col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-8"
+          role="region" aria-labelledby="appointments-service-title">
+          <div class="h-24 w-24 rounded-full p-4 bg-clifford flex justify-center items-center"
+              aria-hidden="true">
+              <img src="./images/calendary.png" alt="Appointments service logo" />
+          </div>
+          <h3 id="appointments-service-title"
+              class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Quick and Easy Reservation</h3>
+          <p class="font-light text-[16px] sm:text-xl text-center">Our flexible booking system gives you easy access to 
+            trusted babysitters or teachers whenever you need them.
+          </p>
+      </div>
+
+  </div>
+</section>
+
+<section id="service" class="container mx-auto sm:grid grid-cols-12 gap-4 px-4 py-16"
+  aria-labelledby="automate-service-heading">
+  <div class="col-span-6">
+      <div class="flex flex-col items-center justify-center">
+          <img src="./images/contacnow.png" alt="Service that Pawfect Care automates"
+              class="block w-[450px] h-[450px] p-2" />
+      </div>
+  </div>
+  
+  <div class="col-span-6 flex flex-col gap-8 mt-4">
+    <h2 id="automate-service-heading" class="text-3xl lg:text-6xl text-center sm:text-start font-bold mt-20 sm:pr-8">
+        We're Always Here, So You Can Contact Us When It Matters Most
+    </h2>
+    <div class="flex flex-row gap-2">
+        <a href="#contact" class="bg-customDarkBlue text-white p-3 rounded-3xl font-light text-xl"
+            aria-label="Contact Pawfect Care now">Contact now</a>
+    </div>
+</div>
+
+</section>
+    <section id="subscriptions" class="container mx-auto flex flex-col gap-10 py-16"aria-labelledby="subscriptions-heading">
+        <h2 id="subscriptions-heading" class="text-3xl sm:text-6xl text-center font-bold">Subscriptions</h2>
+        <div class="flex flex-col sm:grid grid-cols-12 gap-4 sm:gap-6 lg:gap-6 max-w-[800px] mx-auto justify-center">
+            <div class="col-span-6 border-customBlue border-4 rounded-xl p-4 flex flex-col justify-center items-center gap-8 py-10">
+                <h3 class="text-2xl sm:text-3xl font-bold text-clifford text-center">Care Starter</h3>
+                <ul class="font-light text-[16px] sm:text-xl flex flex-col items-start gap-3" aria-label="Características del plan started por $00.00">
+                    <li class="flex flex-row justify-center items-center gap-3">
+                        <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>Create and manage your profile easily
+                    </li>
+                    <li class="flex flex-row justify-center items-center gap-3">
+                            <span><img class="block h-6 w-6" alt="bullet point icon" src="./images/point.png" /></span>
+                            Post childcare requests and connect with caregivers
+                    </li>
+                        <li class="flex flex-row justify-center items-center gap-3">
+                            <span><img class="block h-6 w-6" alt="bullet point icon" src="./images/point.png" /></span>
+                            Access essential tools to manage your bookings and coordinate with caregivers efficiently
+                        </li>
+                        <li class="flex flex-row justify-center items-center gap-3">
+                            <span><img class="block h-6 w-6" alt="bullet point icon" src="./images/point.png" /></span>
+                            Receive real-time notifications to always stay on top of your requests
+                        </li>
+                        <li class="flex flex-row justify-center items-center gap-3">
+                            <span><img class="block h-6 w-6" alt="bullet point icon" src="./images/point.png" /></span>
+                            Enjoy unlimited access to your booking and request history
+                        </li>
+                    </ul>
+                    <button class="rounded-3xl border-customDarkBlue bg-customDarkBlue text-white p-3 text-2xl font-bold">S/.10.00</button>
+                </div>
+                <div
+                        class="col-span-6 border-customBlue border-4 rounded-xl p-4 flex flex-col justify-center items-center gap-8 py-10">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-clifford text-center">Care Pro</h3>
+                    <ul class="font-light text-[16px] sm:text-xl flex flex-col items-start gap-3"
+                        aria-label="Características del plan Premium por $150.00">
+                        <li class="flex flex-row justify-center items-center gap-2">
+                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
+                            Unlimited access to elite caregivers and tutors, available at any time
+                        </li>
+                        <li class="flex flex-row justify-center items-center gap-2">
+                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
+                            24/7 booking management without restrictions
+                        </li>
+                        <li class="flex flex-row justify-center items-center gap-2">
+                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
+                            Total customization of the experience
+                        </li>
+                        <li class="flex flex-row justify-center items-center gap-2">
+                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
+                            Complete customization of care requests and preferences
+                        </li>
+                        <li class="flex flex-row justify-center items-center gap-2">
+                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
+                            Expert support and personalized attention to help you at all times
+                        </li>
+                    </ul>
+                    <button class="rounded-3xl border-customDarkBlue bg-customDarkBlue text-white p-3 text-2xl font-bold">S/.30.00</button>
+                </div>
+
+                <p class="col-span-12 text-center text-xl font-bold py-8">
+                    Find the perfect plan for your childcare needs. Each option is designed to give you the tools and flexibility to make
+                    connecting with caregivers easier and improve your childcare management experience.
+                </p>
+            </div>
+</section>
+
+<section class="container mx-auto px-4 flex flex-col justify-center items-center gap-10 py-16"
+            aria-labelledby="customer-reviews-heading">
+            <h2 id="customer-reviews-heading" class="text-3xl sm:text-6xl text-center font-bold">Customer Reviews</h2>
+            <div
+                class="flex flex-col max-w-[400px] sm:max-w-[800px] sm:grid grid-cols-12 lg:max-w-[1200px] mx-auto gap-4">
+
+                <div class="col-span-12 sm:col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-4"
+                    aria-labelledby="review-1-heading">
+                    <div class="flex flex-col items-center justify-center">
+                        <img src="./images/Customer1.png" alt="Profile image of a satisfied customer"
+                            class="block lg:max-h-[300px] w-auto p-4 rounded-full" />
+                    </div>
+                    <h3 id="review-1-heading"
+                        class="text-2xl sm:text-3xl font-light text-clifford text-center bg-customVerySkyBlue-200 py-2 px-4 rounded-xl">
+                        Exceptional Service</h3>
+                    <p class="font-light text-[16px] sm:text-xl text-center">
+                        “This platform has completely transformed the way I manage childcare. I can now connect with trusted nannies and tutors 
+                        without any hassle, and the experience is so seamless that I don't want to use any other service.”
+                    </p>
+                </div>
+
+                <div class="col-span-12 sm:col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-4"
+                    aria-labelledby="review-2-heading">
+                    <div class="flex flex-col items-center justify-center">
+                        <img src="./images/Customer2.png" alt="Profile image of another satisfied customer"
+                            class="block lg:max-h-[300px] w-auto p-4 rounded-full" />
+                    </div>
+                    <h3 id="review-2-heading"
+                        class="text-2xl sm:text-3xl font-light text-clifford text-center bg-customVerySkyBlue-200 py-2 px-4 rounded-xl">
+                        Effortless Management</h3>
+                    <p class="font-light text-[16px] sm:text-xl text-center">
+                        “Managing care requests has never been easier. This platform takes care of everything, allowing me to focus on my
+                         children's well-being without worries.”
+                    </p>
+                </div>
+
+                <div class="col-span-12 sm:col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-4"
+                    aria-labelledby="review-3-heading">
+                    <div class="flex flex-col items-center justify-center">
+                        <img src="./images/Customer3.png" alt="Profile image of another satisfied customer"
+                            class="block lg:max-h-[300px] w-auto p-4 rounded-full" />
+                    </div>
+                    <h3 id="review-3-heading"
+                        class="text-2xl sm:text-3xl font-light text-clifford text-center bg-customVerySkyBlue-200 py-2 px-4 rounded-xl">
+                        Time-Saving Solution</h3>
+                    <p class="font-light text-[16px] sm:text-xl text-center">
+                        “With this platform, I save hours every day. The option to manage requests and bookings 24/7 ensures that I never 
+                        lack a caregiver or tutor when I need one.”
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="container mx-auto flex flex-col justify-center items-center gap-10 pb-16"
+    aria-labelledby="contact-heading">
+    <h2 id="contact-heading" class="text-3xl sm:text-6xl text-center font-bold">Contact</h2>
+
+    <div class="bg-customVerySkyBlue min-w-[400px] md:min-w-[500px] rounded-lg p-8">
+        <form class="flex flex-col gap-4" aria-labelledby="contact-form-heading">
+
+            <div class="flex flex-col items-center justify-center gap-4">
+                <div class="h-28 w-28 rounded-full bg-white p-4 flex justify-center items-center">
+                    <img src="./images/favicon.png" alt="RideFind Logo" />
+                </div>
+                <h3 id="contact-form-heading" class="text-xl sm:text-2xl font-bold text-black text-center">Get in Touch with Safe Child</h3>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <label class="text-xl font-light" htmlFor="name">Full Name</label>
+                <input class="border-none p-2 rounded-xl max-w-lg" type="text" id="name" name="name"
+                    aria-label="Enter your full name" placeholder="John Doe" required />
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <label class="text-xl font-light" htmlFor="phone">Phone Number</label>
+                <input class="border-none p-2 rounded-xl max-w-lg" type="tel" id="phone" name="phone"
+                    aria-label="Enter your phone number" placeholder="+1234567890" required />
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <label class="text-xl font-light" htmlFor="message">Your Message</label>
+                <textarea class="border-none p-2 rounded-xl max-w-lg" id="message" name="message"
+                    aria-label="Enter your message" placeholder="How can we assist you?" required></textarea>
+            </div>
+
+            <button type="submit" class="bg-orange-400 text-white p-2 rounded-3xl font-light text-xl">Send Message</button>
+        </form>
+    </div>
+</section>
+
+  <!-- Video Previews Section -->
+    <section id="video-links" class="container mx-auto py-8">
+        <h3 class="text-2xl sm:text-4xl text-center font-bold mb-6">Watch Our Videos</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <!-- Video 1 -->
+            <div class="flex flex-col items-center">
+                <h4 class="text-xl font-bold mb-2">About the Team</h4>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/57W8KR7rG9A" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <!-- Video 2 -->
+            <div class="flex flex-col items-center">
+                <h4 class="text-xl font-bold mb-2">About the Product</h4>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/zwqX3E_WdSU" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+        <footer class="bg-white" aria-labelledby="footer-heading">
+            <div class="container mx-auto flex flex-col items-center md:flex-row justify-between py-5 px-4">
+
+
+                <a href="/" class="flex flex-row items-center justify-center gap-2 p-4" aria-label="Inicio">
+                    <div class="h-28 w-30 rounded-full p-4 flex justify-center items-center">
+                        <img src="./images/favicon.png" alt="Logo de RideFind" />
+                    </div>
+                
+                </a>
+
+
+                <nav aria-label="Enlaces principales">
+                    <ul class="flex flex-row justify-center gap-10 pb-8 md:pb-0">
+                        <li class="flex flex-col gap-4">
+                            <a class="font-bold text-xl" href="#contact" aria-label="Ir a la sección de Soporte">Support</a>
+                            <ul>
+                                <li><a href="tel:+578203548"
+                                        aria-label="Llamar al soporte de Pawfect Care">+578203548</a></li>
+                                <li><a href="mailto:support@gmail.com"
+                                        aria-label="Enviar un correo al soporte de Pawfect Care">support@gmail.com</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="flex flex-col gap-4">
+                            <a class="font-bold text-xl" href="#" aria-label="Ir a la sección de Servicios">Services</a>
+                            <ul>
+                                <li><a href="#subscriptions" aria-label="Información sobre Membresía">Membership</a></li>
+                                <li><a href="/" aria-label="Iniciar sesión en Pawfect Care">Sign In</a></li>
+                            </ul>
+                        </li>
+                        <li class="flex flex-col gap-4">
+                            <a class="font-bold text-xl" href="#" aria-label="Ir a la sección de Nosotros">About Us</a>
+                            <ul>
+                                <li><a href="#contact" aria-label="Contacta con Pawfect Care">Contact</a></li>
+                                <li><a href="#service" aria-label="¿Por qué elegir Pawfect Care?">Why Choose Us?</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="flex flex-col items-center gap-4" aria-labelledby="follow-us">
+                    <h4 id="follow-us" class="font-bold text-xl">Follow Us</h4>
+                    <div class="flex flex-row gap-4">
+                        <a href="https://x.com/" aria-label="Follow  Pawfect Care in Twitter">
+                            <div class="h-16 w-16 p-4 flex justify-center items-center">
+                                <img src="./images/twitter.png" alt="Logo de Twitter" />
+                            </div>
+                        </a>
+                        <a href="https://facebook.com/" aria-label="Follow a Pawfect Care in Facebook">
+                            <div class="h-16 w-16 p-4 flex justify-center items-center">
+                                <img src="./images/fb.png" alt="Logo de Facebook" />
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/#" aria-label="Follow a Pawfect Care in Instagram">
+                            <div class="h-16 w-16 p-4 flex justify-center items-center">
+                                <img src="./images/instagram.png" alt="Logo de Instagram" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
