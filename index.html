@@ -12,11 +12,10 @@
             theme: {
                 extend: {
                     colors: {
-                        clifford: '#da373d',
+                        clifford: '#0D3A5A',
                         customBlue: '#5CAFF8',
                         customSkyBlue: '#6DD8F0',
                         customDarkBlue: '#0D3A5A',
-                        customYellow: '#E1D568',
                         customVerySkyBlue: '#65C1C0',
                     }
                 }
@@ -48,16 +47,12 @@
                         <a href="#subscriptions" role="menuitem">Subscriptions</a>
                     </li>
                 </ul>
-                <div class="flex flex-row gap-2">
-                    <button class="bg-customDarkBlue text-white p-3 rounded-3xl font-light text-xl" aria-label="Sign in to Safe Child" onclick="window.location.href='https://synapsoft-17dc0.web.app/login'">Sign in</button>
-                    <button class="rounded-3xl border-2 border-customSkyBlue text-clifford p-3 text-xl" aria-label="Sign up for Safe Child" onclick="window.location.href='https://synapsoft-17dc0.web.app/login'">Sign up</button>
-            </div>
             </nav>
         </header>
         
         <section id="home" class="flex flex-col sm:grid grid-cols-12 gap-8 px-4 py-16 container mx-auto" aria-labelledby="hero-heading">
             <div class="col-span-6 flex flex-col justify-center gap-8 sm:pl-1">
-                <h2 id="hero-heading" class="ml-10 text-3xl lg:text-6xl text-center sm:text-start font-bold">Connecting Families with Trusted 
+                <h2 id="hero-heading" class="ml-10 text-3xl lg:text-6xl text-center sm:text-start font-bold">Connecting Families with 
                     Caregivers and Teachers
                 </h2>
             </div>
@@ -70,7 +65,7 @@
         </section>
         
             <p class="col-span-12 text-center text-xl font-bold" aria-live="polite">Our platform helps over 3,000 families 
-                find trusted babysitters and qualified tutors, ensuring quality care and education for their children.
+                find babysitters and qualified tutors, ensuring quality care and education for their children.
 
 
 
@@ -88,7 +83,7 @@
               <img src="./images/speed.png" alt="Speed service logo" />
           </div>
           <h3 id="speed-service-title" class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Fast and Always Available</h3>
-          <p class="font-light text-[16px] sm:text-xl text-center">Our platform connects parents with trusted caregivers, letting you focus
+          <p class="font-light text-[16px] sm:text-xl text-center">Our platform connects parents with caregivers, letting you focus
              on your child's care and education.
 
           </p>
@@ -116,7 +111,7 @@
           <h3 id="appointments-service-title"
               class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Quick and Easy Reservation</h3>
           <p class="font-light text-[16px] sm:text-xl text-center">Our flexible booking system gives you easy access to 
-            trusted babysitters or teachers whenever you need them.
+            babysitters or teachers whenever you need them.
           </p>
       </div>
 
@@ -223,7 +218,7 @@
                         class="text-2xl sm:text-3xl font-light text-clifford text-center bg-customVerySkyBlue-200 py-2 px-4 rounded-xl">
                         Exceptional Service</h3>
                     <p class="font-light text-[16px] sm:text-xl text-center">
-                        “This platform has completely transformed the way I manage childcare. I can now connect with trusted nannies and tutors 
+                        “This platform has completely transformed the way I manage childcare. I can now connect with nannies and tutors 
                         without any hassle, and the experience is so seamless that I don't want to use any other service.”
                     </p>
                 </div>
@@ -270,9 +265,9 @@
 
             <div class="flex flex-col items-center justify-center gap-4">
                 <div class="h-28 w-28 rounded-full bg-white p-4 flex justify-center items-center">
-                    <img src="./images/favicon.png" alt="RideFind Logo" />
+                    <img src="./images/favicon.png" alt="Logo" />
                 </div>
-                <h3 id="contact-form-heading" class="text-xl sm:text-2xl font-bold text-black text-center">Get in Touch with Safe Child</h3>
+                <h3 id="contact-form-heading" class="text-xl sm:text-2xl font-bold text-black text-center">Get in Touch with SafeChild</h3>
             </div>
 
             <div class="flex flex-col gap-4">
@@ -298,39 +293,14 @@
     </div>
 </section>
 
-  <!-- Video Previews Section -->
-    <section id="video-links" class="container mx-auto py-8">
-        <h3 class="text-2xl sm:text-4xl text-center font-bold mb-6">Watch Our Videos</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <!-- Video 1 -->
-            <div class="flex flex-col items-center">
-                <h4 class="text-xl font-bold mb-2">About the Team</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/57W8KR7rG9A" 
-                        title="YouTube video player" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen></iframe>
-            </div>
-            <!-- Video 2 -->
-            <div class="flex flex-col items-center">
-                <h4 class="text-xl font-bold mb-2">About the Product</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/zwqX3E_WdSU" 
-                        title="YouTube video player" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
+    <footer class="bg-white" aria-labelledby="footer-heading">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between py-5 px-4 gap-8">
 
-        <footer class="bg-white" aria-labelledby="footer-heading">
-            <div class="container mx-auto flex flex-col items-center md:flex-row justify-between py-5 px-4">
-
-
-                <a href="/" class="flex flex-row items-center justify-center gap-2 p-4" aria-label="Inicio">
-                    <div class="h-28 w-30 rounded-full p-4 flex justify-center items-center">
-                        <img src="./images/favicon.png" alt="Logo de RideFind" />
-                    </div>
-                
-                </a>
+            <a href="/" class="flex flex-row items-center justify-center gap-2 p-4" aria-label="Inicio">
+                <div class="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-full p-2 flex justify-center items-center">
+                    <img src="./images/favicon.png" alt="Logo" class="max-w-full max-h-full" />
+                </div>
+            </a>
 
 
                 <nav aria-label="Enlaces principales">
@@ -340,8 +310,8 @@
                             <ul>
                                 <li><a href="tel:+578203548"
                                         aria-label="Llamar al soporte de Pawfect Care">+578203548</a></li>
-                                <li><a href="mailto:support@gmail.com"
-                                        aria-label="Enviar un correo al soporte de Pawfect Care">support@gmail.com</a>
+                                <li><a href="mailto:support.safechild@gmail.com"
+                                        aria-label="Enviar un correo al soporte de Pawfect Care">support.safechild@gmail.com</a>
                                 </li>
                             </ul>
                         </li>
