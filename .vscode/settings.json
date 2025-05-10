@@ -1,0 +1,10 @@
+{
+        "colorize.languages": [
+    "html",
+    "css",
+    "javascript"
+  ],
+  "colorize.decoration_type": "square-dot",
+    "colorize.colorize": true,
+"editor.colorDecorators": true
+}
