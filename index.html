@@ -1,360 +1,424 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 <head>
-    <title>Landing page Safe Child</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="./images/favicon.png" type="image/png" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#0D3A5A',
-                        customBlue: '#5CAFF8',
-                        customSkyBlue: '#6DD8F0',
-                        customDarkBlue: '#0D3A5A',
-                        customVerySkyBlue: '#65C1C0',
-                    }
-                }
-            }
+  <title>Página de inicio Safe Child</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CDN con configuración personalizada -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="./images/favicon.png" type="image/png" />
+  <style>
+    html {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      background: #f5f5f5;
+    }
+    body {
+      min-height: 100vh;
+      color: #0D3A5A;
+      background: #f5f5f5;
+    }
+    .header-shadow {
+      box-shadow: 0 2px 8px 0 rgba(13,58,90,0.07);
+      transition: box-shadow 0.2s;
+    }
+    .card-hover {
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+    }
+    .card-hover:hover, .card-hover:focus-within {
+      transform: scale(1.04) rotate(-1deg);
+      box-shadow: 0 8px 32px 0 rgba(92,175,248,0.18);
+      z-index: 2;
+    }
+    .flip-card {
+      perspective: 1000px;
+      min-height: 420px;
+    }
+    .flip-inner {
+      transition: transform 0.6s cubic-bezier(.4,0,.2,1);
+      transform-style: preserve-3d;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .flip-card.flipped .flip-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      backface-visibility: hidden;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+    .no-scroll {
+      overflow: hidden;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#0D3A5A',
+            customBlue: '#5CAFF8',
+            customSkyBlue: '#6DD8F0',
+            customDarkBlue: '#0D3A5A',
+            customVerySkyBlue: '#65C1C0',
+            headerColor: '#0D3A5A',
+            accent: '#FF9800',
+            contrast: '#fff',
+            dark: '#222',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Segoe UI', 'Arial', 'sans-serif'],
+          },
         }
-    </script>
+      }
+    }
+  </script>
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
-
-<body>
-    <main class="bg-[#F5F5F5]">
-        <header class="bg-white">
-            <nav class="container mx-auto flex justify-between items-center py-00 px-20" aria-label="Main Navigation">
-                <a href="/" class="flex flex-row items-center gap-2" aria-label="Safe Child Home">
-                    <div class="h-40 w-40 rounded-full flex justify-center items-center" aria-hidden="true">
-                        <img src="./images/favicon.png" alt="Safe Child Logo" />
-                    </div>                
-                </a>
-                <ul class="hidden sm:flex flex-row gap-8 text-xl font-bold" role="menubar">
-                    <li role="none">
-                        <a href="#home" role="menuitem">Home</a>
-                    </li>
-                    <li role="none">
-                        <a href="#about" role="menuitem">Why Choose Us?</a>
-                    </li>
-                    <li role="none">
-                        <a href="#contact" role="menuitem">Contact</a>
-                    </li>
-                    <li role="none">
-                        <a href="#subscriptions" role="menuitem">Subscriptions</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        
-        <section id="home" class="flex flex-col sm:grid grid-cols-12 gap-8 px-4 py-16 container mx-auto" aria-labelledby="hero-heading">
-            <div class="col-span-6 flex flex-col justify-center gap-8 sm:pl-1">
-                <h2 id="hero-heading" class="ml-10 text-3xl lg:text-6xl text-center sm:text-start font-bold">Connecting Families with 
-                    Caregivers and Teachers
-                </h2>
-            </div>
-            <div class="col-span-6">
-                <div class="relative h-[400px] flex flex-col justify-center items-center" aria-hidden="true">
-                    <img src="./images/p1.png" alt="Screenshot of Pawfect Care software" class="lg:max-h-[500px] w-auto p-4 rounded-full">
-                </div>
-                
-            </div>
-        </section>
-        
-            <p class="col-span-12 text-center text-xl font-bold" aria-live="polite">Our platform helps over 3,000 families 
-                find babysitters and qualified tutors, ensuring quality care and education for their children.
-
-
-
-
-
-
-            </p>
-  </section>
-
-  <section id="about" class="container mx-auto flex flex-col gap-10 py-16" aria-labelledby="why-choose-us-heading">
-  <h2 id="why-choose-us-heading" class="text-3xl sm:text-6xl text-center font-bold">Why Choose Us?</h2>
-  <div class="flex flex-col sm:grid grid-cols-12 gap-4 sm:gap-6 lg:gap-6 max-w-[400px] sm:max-w-[700px] lg:max-w-[1200px] mx-auto">
-      <div class="col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-8"role="region" aria-labelledby="speed-service-title">
-          <div class="h-24 w-24 rounded-full p-4 bg-clifford flex justify-center items-center"aria-hidden="true">
-              <img src="./images/speed.png" alt="Speed service logo" />
-          </div>
-          <h3 id="speed-service-title" class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Fast and Always Available</h3>
-          <p class="font-light text-[16px] sm:text-xl text-center">Our platform connects parents with caregivers, letting you focus
-             on your child's care and education.
-
-          </p>
-      </div>
-
-      <div class="col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-8"
-          role="region" aria-labelledby="multiplatform-service-title">
-          <div class="h-24 w-24 rounded-full p-4 bg-clifford flex justify-center items-center"
-              aria-hidden="true">
-              <img src="./images/multiplatform.png" alt="Multiplatform service logo" />
-          </div>
-          <h3 id="multiplatform-service-title"
-              class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Access from Any Device</h3>
-          <p class="font-light text-[16px] sm:text-xl text-center">Use our platform on any device to connect with nannies, 
-            manage appointments, and ensure your child's care from anywhere.
-          </p>
-      </div>
-
-      <div class="col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-8"
-          role="region" aria-labelledby="appointments-service-title">
-          <div class="h-24 w-24 rounded-full p-4 bg-clifford flex justify-center items-center"
-              aria-hidden="true">
-              <img src="./images/calendary.png" alt="Appointments service logo" />
-          </div>
-          <h3 id="appointments-service-title"
-              class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Quick and Easy Reservation</h3>
-          <p class="font-light text-[16px] sm:text-xl text-center">Our flexible booking system gives you easy access to 
-            babysitters or teachers whenever you need them.
-          </p>
-      </div>
-
-  </div>
-</section>
-
-<section id="service" class="container mx-auto sm:grid grid-cols-12 gap-4 px-4 py-16"
-  aria-labelledby="automate-service-heading">
-  <div class="col-span-6">
-      <div class="flex flex-col items-center justify-center">
-          <img src="./images/contacnow.png" alt="Service that Pawfect Care automates"
-              class="block w-[450px] h-[450px] p-2" />
-      </div>
-  </div>
-  
-  <div class="col-span-6 flex flex-col gap-8 mt-4">
-    <h2 id="automate-service-heading" class="text-3xl lg:text-6xl text-center sm:text-start font-bold mt-20 sm:pr-8">
-        We're Always Here, So You Can Contact Us When It Matters Most
-    </h2>
-    <div class="flex flex-row gap-2">
-        <a href="#contact" class="bg-customDarkBlue text-white p-3 rounded-3xl font-light text-xl"
-            aria-label="Contact Pawfect Care now">Contact now</a>
+<body class="font-sans bg-[#f5f5f5] text-customDarkBlue antialiased">
+  <!-- Encabezado Fijo -->
+  <header id="main-header" class="sticky top-0 z-40 bg-customBlue header-shadow transition-shadow">
+    <nav class="container mx-auto flex justify-between items-center px-4 sm:px-8 py-2" aria-label="Navegación principal">
+      <a href="/" class="flex flex-row items-center gap-2 focus:outline-none focus:ring-2 focus:ring-accent rounded" aria-label="Inicio Safe Child">
+        <div class="h-12 w-12 sm:h-16 sm:w-16 rounded-full flex justify-center items-center bg-white shadow" aria-hidden="true">
+          <img src="./images/favicon.png" alt="Logo Safe Child" width="48" height="48" loading="lazy" />
+        </div>
+        <span class="text-2xl font-bold text-contrast hidden sm:inline">SafeChild</span>
+      </a>
+      <!-- Navegación escritorio -->
+      <ul class="hidden md:flex flex-row gap-8 text-lg font-semibold" role="menubar">
+        <li role="none">
+          <a href="#home" class="text-contrast hover:text-accent focus:text-accent px-2 py-1 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">Inicio</a>
+        </li>
+        <li role="none">
+          <a href="#about" class="text-contrast hover:text-accent focus:text-accent px-2 py-1 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">¿Por qué elegirnos?</a>
+        </li>
+        <li role="none">
+          <a href="#service" class="text-contrast hover:text-accent focus:text-accent px-2 py-1 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">Servicios</a>
+        </li>
+        <li role="none">
+          <a href="#subscriptions" class="text-contrast hover:text-accent focus:text-accent px-2 py-1 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">Suscripciones</a>
+        </li>
+        <li role="none">
+          <a href="#contact" class="text-contrast hover:text-accent focus:text-accent px-2 py-1 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">Contacto</a>
+        </li>
+      </ul>
+      <!-- Menú hamburguesa móvil -->
+      <button id="nav-toggle" class="md:hidden flex items-center justify-center h-12 w-12 rounded focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Abrir menú de navegación" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="sr-only">Abrir menú</span>
+        <svg class="w-8 h-8 text-contrast" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"/>
+        </svg>
+      </button>
+    </nav>
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="fixed inset-0 bg-customBlue bg-opacity-95 flex flex-col items-center justify-center gap-8 text-2xl font-bold text-contrast z-50 transition-all duration-300 ease-in-out pointer-events-none opacity-0" aria-label="Navegación móvil" role="dialog" aria-modal="true" hidden>
+      <button id="nav-close" class="absolute top-6 right-6 h-12 w-12 flex items-center justify-center rounded focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Cerrar menú de navegación">
+        <svg class="w-8 h-8 text-contrast" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <a href="#home" class="hover:text-accent focus:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">Inicio</a>
+      <a href="#about" class="hover:text-accent focus:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">¿Por qué elegirnos?</a>
+      <a href="#service" class="hover:text-accent focus:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">Servicios</a>
+      <a href="#subscriptions" class="hover:text-accent focus:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">Suscripciones</a>
+      <a href="#contact" class="hover:text-accent focus:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent" role="menuitem">Contacto</a>
     </div>
-</div>
+  </header>
 
-</section>
-    <section id="subscriptions" class="container mx-auto flex flex-col gap-10 py-16"aria-labelledby="subscriptions-heading">
-        <h2 id="subscriptions-heading" class="text-3xl sm:text-6xl text-center font-bold">Subscriptions</h2>
-        <div class="flex flex-col sm:grid grid-cols-12 gap-4 sm:gap-6 lg:gap-6 max-w-[800px] mx-auto justify-center">
-            <div class="col-span-6 border-customBlue border-4 rounded-xl p-4 flex flex-col justify-center items-center gap-8 py-10">
-                <h3 class="text-2xl sm:text-3xl font-bold text-clifford text-center">Care Starter</h3>
-                <ul class="font-light text-[16px] sm:text-xl flex flex-col items-start gap-3" aria-label="Características del plan started por $00.00">
-                    <li class="flex flex-row justify-center items-center gap-3">
-                        <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>Create and manage your profile easily
-                    </li>
-                    <li class="flex flex-row justify-center items-center gap-3">
-                            <span><img class="block h-6 w-6" alt="bullet point icon" src="./images/point.png" /></span>
-                            Post childcare requests and connect with caregivers
-                    </li>
-                        <li class="flex flex-row justify-center items-center gap-3">
-                            <span><img class="block h-6 w-6" alt="bullet point icon" src="./images/point.png" /></span>
-                            Access essential tools to manage your bookings and coordinate with caregivers efficiently
-                        </li>
-                        <li class="flex flex-row justify-center items-center gap-3">
-                            <span><img class="block h-6 w-6" alt="bullet point icon" src="./images/point.png" /></span>
-                            Receive real-time notifications to always stay on top of your requests
-                        </li>
-                        <li class="flex flex-row justify-center items-center gap-3">
-                            <span><img class="block h-6 w-6" alt="bullet point icon" src="./images/point.png" /></span>
-                            Enjoy unlimited access to your booking and request history
-                        </li>
-                    </ul>
-                    <button class="rounded-3xl border-customDarkBlue bg-customDarkBlue text-white p-3 text-2xl font-bold">S/.10.00</button>
-                </div>
-                <div
-                        class="col-span-6 border-customBlue border-4 rounded-xl p-4 flex flex-col justify-center items-center gap-8 py-10">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-clifford text-center">Care Pro</h3>
-                    <ul class="font-light text-[16px] sm:text-xl flex flex-col items-start gap-3"
-                        aria-label="Características del plan Premium por $150.00">
-                        <li class="flex flex-row justify-center items-center gap-2">
-                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
-                            Unlimited access to elite caregivers and tutors, available at any time
-                        </li>
-                        <li class="flex flex-row justify-center items-center gap-2">
-                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
-                            24/7 booking management without restrictions
-                        </li>
-                        <li class="flex flex-row justify-center items-center gap-2">
-                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
-                            Total customization of the experience
-                        </li>
-                        <li class="flex flex-row justify-center items-center gap-2">
-                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
-                            Complete customization of care requests and preferences
-                        </li>
-                        <li class="flex flex-row justify-center items-center gap-2">
-                            <span><img class="block h-5 w-5" alt="bullet point icon" src="./images/point.png" /></span>
-                            Expert support and personalized attention to help you at all times
-                        </li>
-                    </ul>
-                    <button class="rounded-3xl border-customDarkBlue bg-customDarkBlue text-white p-3 text-2xl font-bold">S/.30.00</button>
-                </div>
+  <main id="main-content" class="bg-[#f5f5f5]">
+    <!-- Hero Section -->
+    <section id="home" class="flex flex-col md:grid grid-cols-12 gap-8 px-4 py-16 container mx-auto" aria-labelledby="hero-heading" role="region">
+      <div class="col-span-6 flex flex-col justify-center gap-8 sm:pl-1">
+        <h1 id="hero-heading" class="ml-0 md:ml-10 text-3xl md:text-5xl lg:text-6xl font-extrabold text-customDarkBlue leading-tight">
+          Conectando familias con <span class="text-customBlue">niñeras</span> y <span class="text-accent">profesores</span>
+        </h1>
+        <p class="text-lg md:text-xl font-light max-w-xl">
+          SafeChild ayuda a más de <span class="font-bold text-customBlue">3,000 familias</span> a encontrar niñeras y tutores de confianza, asegurando el mejor cuidado y educación para sus hijos.
+        </p>
+        <div class="flex gap-4 mt-2">
+          <a href="#subscriptions" class="bg-accent text-white px-6 py-3 rounded-3xl font-semibold text-lg shadow hover:bg-orange-500 focus:bg-orange-500 transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Ver planes</a>
+          <a href="#contact" class="bg-customDarkBlue text-white px-6 py-3 rounded-3xl font-light text-lg shadow hover:bg-clifford focus:bg-clifford transition-colors focus:outline-none focus:ring-2 focus:ring-customBlue">Contáctanos</a>
+        </div>
+      </div>
+      <div class="col-span-6 flex items-center justify-center">
+        <div class="relative h-[320px] md:h-[400px] flex flex-col justify-center items-center" aria-hidden="true">
+          <img src="./images/p1.png" alt="Captura de SafeChild mostrando familia y cuidadores" class="lg:max-h-[400px] w-auto p-4 rounded-full shadow-lg" loading="lazy">
+        </div>
+      </div>
+    </section>
 
-                <p class="col-span-12 text-center text-xl font-bold py-8">
-                    Find the perfect plan for your childcare needs. Each option is designed to give you the tools and flexibility to make
-                    connecting with caregivers easier and improve your childcare management experience.
-                </p>
+    <!-- Why Choose Us -->
+    <section id="about" class="container mx-auto flex flex-col gap-10 py-16" aria-labelledby="why-choose-us-heading" role="region">
+      <h2 id="why-choose-us-heading" class="text-3xl sm:text-5xl text-center font-bold mb-8 text-customDarkBlue">¿Por qué elegirnos?</h2>
+      <div class="flex flex-col md:grid grid-cols-12 gap-6 max-w-[1200px] mx-auto">
+        <div class="col-span-4 card-hover border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-8 bg-white shadow-sm" role="region" aria-labelledby="speed-service-title">
+          <div class="h-24 w-24 rounded-full p-4 bg-clifford flex justify-center items-center" aria-hidden="true">
+            <img src="./images/speed.png" alt="Ícono de servicio rápido" width="64" height="64" loading="lazy" />
+          </div>
+          <h3 id="speed-service-title" class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Rápido y siempre disponible</h3>
+          <p class="font-light text-base sm:text-lg text-center">Conectamos padres con cuidadores para que te enfoques en el bienestar y educación de tus hijos.</p>
+        </div>
+        <div class="col-span-4 card-hover border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-8 bg-white shadow-sm" role="region" aria-labelledby="multiplatform-service-title">
+          <div class="h-24 w-24 rounded-full p-4 bg-clifford flex justify-center items-center" aria-hidden="true">
+            <img src="./images/multiplatform.png" alt="Ícono multiplataforma" width="64" height="64" loading="lazy" />
+          </div>
+          <h3 id="multiplatform-service-title" class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Acceso desde cualquier dispositivo</h3>
+          <p class="font-light text-base sm:text-lg text-center">Usa nuestra plataforma en cualquier dispositivo para conectar, gestionar citas y asegurar el cuidado de tus hijos.</p>
+        </div>
+        <div class="col-span-4 card-hover border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-8 bg-white shadow-sm" role="region" aria-labelledby="appointments-service-title">
+          <div class="h-24 w-24 rounded-full p-4 bg-clifford flex justify-center items-center" aria-hidden="true">
+            <img src="./images/calendary.png" alt="Ícono de reservas" width="64" height="64" loading="lazy" />
+          </div>
+          <h3 id="appointments-service-title" class="text-2xl sm:text-3xl font-bold text-customDarkBlue text-center">Reserva fácil y rápida</h3>
+          <p class="font-light text-base sm:text-lg text-center">Sistema flexible para reservar niñeras o profesores cuando los necesites.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="service" class="container mx-auto md:grid grid-cols-12 gap-4 px-4 py-16" aria-labelledby="automate-service-heading" role="region">
+      <div class="col-span-6 flex flex-col items-center justify-center">
+        <img src="./images/contacnow.png" alt="Ilustración de servicio de contacto inmediato" class="block w-[300px] md:w-[450px] h-auto p-2 rounded-lg shadow" loading="lazy" />
+      </div>
+      <div class="col-span-6 flex flex-col gap-8 mt-4">
+        <h2 id="automate-service-heading" class="text-3xl lg:text-5xl font-bold text-customDarkBlue mb-4">Siempre disponibles, contáctanos cuando más lo necesites</h2>
+        <p class="text-lg font-light">Nuestro equipo de soporte está disponible 24/7 para ayudarte con cualquier consulta o problema. ¡Escríbenos cuando quieras!</p>
+        <div class="flex flex-row gap-4">
+          <a href="#contact" class="bg-customDarkBlue text-white px-6 py-3 rounded-3xl font-light text-lg shadow hover:bg-clifford focus:bg-clifford transition-colors focus:outline-none focus:ring-2 focus:ring-customBlue" aria-label="Contactar SafeChild ahora">Contactar ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suscripciones (Tarjetas Interactivas) -->
+    <section id="subscriptions" class="container mx-auto flex flex-col gap-10 py-16" aria-labelledby="subscriptions-heading" role="region">
+      <h2 id="subscriptions-heading" class="text-3xl sm:text-5xl text-center font-bold text-customDarkBlue mb-8">Suscripciones</h2>
+      <div class="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto justify-center items-stretch">
+        <!-- Tarjeta 1 -->
+        <div tabindex="0" class="flip-card relative border-customBlue border-4 rounded-xl p-6 flex-1 min-w-[320px] max-w-[480px] mx-auto bg-white shadow-lg card-hover group focus-within:ring-2 focus-within:ring-accent h-[520px] md:h-[520px] lg:h-[520px]" aria-label="Suscripción Starter" aria-describedby="starter-desc">
+          <div class="flip-inner w-full h-full">
+            <div class="flip-front flex flex-col items-center justify-center h-full">
+              <h3 class="text-2xl sm:text-3xl font-bold text-clifford text-center mb-4">Starter</h3>
+              <ul id="starter-desc" class="font-light text-base sm:text-lg flex flex-col items-start gap-3 mb-6" aria-label="Características del plan Starter">
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Crea y gestiona tu perfil fácilmente</li>
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Publica solicitudes y conecta con cuidadores</li>
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Herramientas esenciales para tus reservas</li>
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Notificaciones en tiempo real</li>
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Historial de reservas ilimitado</li>
+              </ul>
+              <button class="rounded-3xl border-customDarkBlue bg-customDarkBlue text-white px-8 py-3 text-2xl font-bold shadow hover:bg-clifford focus:bg-clifford transition-colors focus:outline-none focus:ring-2 focus:ring-accent">S/.10.00</button>
             </div>
-</section>
-
-<section class="container mx-auto px-4 flex flex-col justify-center items-center gap-10 py-16"
-            aria-labelledby="customer-reviews-heading">
-            <h2 id="customer-reviews-heading" class="text-3xl sm:text-6xl text-center font-bold">Customer Reviews</h2>
-            <div
-                class="flex flex-col max-w-[400px] sm:max-w-[800px] sm:grid grid-cols-12 lg:max-w-[1200px] mx-auto gap-4">
-
-                <div class="col-span-12 sm:col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-4"
-                    aria-labelledby="review-1-heading">
-                    <div class="flex flex-col items-center justify-center">
-                        <img src="./images/Customer1.png" alt="Profile image of a satisfied customer"
-                            class="block lg:max-h-[300px] w-auto p-4 rounded-full" />
-                    </div>
-                    <h3 id="review-1-heading"
-                        class="text-2xl sm:text-3xl font-light text-clifford text-center bg-customVerySkyBlue-200 py-2 px-4 rounded-xl">
-                        Exceptional Service</h3>
-                    <p class="font-light text-[16px] sm:text-xl text-center">
-                        “This platform has completely transformed the way I manage childcare. I can now connect with nannies and tutors 
-                        without any hassle, and the experience is so seamless that I don't want to use any other service.”
-                    </p>
-                </div>
-
-                <div class="col-span-12 sm:col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-4"
-                    aria-labelledby="review-2-heading">
-                    <div class="flex flex-col items-center justify-center">
-                        <img src="./images/Customer2.png" alt="Profile image of another satisfied customer"
-                            class="block lg:max-h-[300px] w-auto p-4 rounded-full" />
-                    </div>
-                    <h3 id="review-2-heading"
-                        class="text-2xl sm:text-3xl font-light text-clifford text-center bg-customVerySkyBlue-200 py-2 px-4 rounded-xl">
-                        Effortless Management</h3>
-                    <p class="font-light text-[16px] sm:text-xl text-center">
-                        “Managing care requests has never been easier. This platform takes care of everything, allowing me to focus on my
-                         children's well-being without worries.”
-                    </p>
-                </div>
-
-                <div class="col-span-12 sm:col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-4"
-                    aria-labelledby="review-3-heading">
-                    <div class="flex flex-col items-center justify-center">
-                        <img src="./images/Customer3.png" alt="Profile image of another satisfied customer"
-                            class="block lg:max-h-[300px] w-auto p-4 rounded-full" />
-                    </div>
-                    <h3 id="review-3-heading"
-                        class="text-2xl sm:text-3xl font-light text-clifford text-center bg-customVerySkyBlue-200 py-2 px-4 rounded-xl">
-                        Time-Saving Solution</h3>
-                    <p class="font-light text-[16px] sm:text-xl text-center">
-                        “With this platform, I save hours every day. The option to manage requests and bookings 24/7 ensures that I never 
-                        lack a caregiver or tutor when I need one.”
-                    </p>
-                </div>
-
+            <div class="flip-back flex flex-col items-center justify-center bg-customBlue rounded-xl p-8 text-contrast h-full">
+              <h4 class="text-2xl font-bold mb-2">Ideal para nuevos usuarios</h4>
+              <p class="text-lg font-light text-center">Comienza con funciones esenciales y acceso ilimitado a tu historial de reservas.</p>
+              <button class="mt-6 rounded-3xl border-2 border-contrast bg-transparent text-contrast px-8 py-3 text-xl font-bold shadow hover:bg-contrast hover:text-customBlue focus:bg-contrast focus:text-customBlue transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Elegir Starter</button>
             </div>
-        </section>
-
-        <section id="contact" class="container mx-auto flex flex-col justify-center items-center gap-10 pb-16"
-    aria-labelledby="contact-heading">
-    <h2 id="contact-heading" class="text-3xl sm:text-6xl text-center font-bold">Contact</h2>
-
-    <div class="bg-customVerySkyBlue min-w-[400px] md:min-w-[500px] rounded-lg p-8">
-        <form class="flex flex-col gap-4" aria-labelledby="contact-form-heading">
-
-            <div class="flex flex-col items-center justify-center gap-4">
-                <div class="h-28 w-28 rounded-full bg-white p-4 flex justify-center items-center">
-                    <img src="./images/favicon.png" alt="Logo" />
-                </div>
-                <h3 id="contact-form-heading" class="text-xl sm:text-2xl font-bold text-black text-center">Get in Touch with SafeChild</h3>
+          </div>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div tabindex="0" class="flip-card relative border-customBlue border-4 rounded-xl p-6 flex-1 min-w-[320px] max-w-[480px] mx-auto bg-white shadow-lg card-hover group focus-within:ring-2 focus-within:ring-accent h-[520px] md:h-[520px] lg:h-[520px]" aria-label="Suscripción Pro" aria-describedby="pro-desc">
+          <div class="flip-inner w-full h-full">
+            <div class="flip-front flex flex-col items-center justify-center h-full">
+              <h3 class="text-2xl sm:text-3xl font-bold text-clifford text-center mb-4">Pro</h3>
+              <ul id="pro-desc" class="font-light text-base sm:text-lg flex flex-col items-start gap-3 mb-6" aria-label="Características del plan Pro">
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Acceso ilimitado a cuidadores y tutores élite</li>
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Gestión de reservas 24/7</li>
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Personalización total de la experiencia</li>
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Solicitudes de cuidado personalizadas</li>
+                <li class="flex flex-row items-center gap-3"><img class="block h-5 w-5" alt="" src="./images/point.png" loading="lazy" />Soporte experto y atención personalizada</li>
+              </ul>
+              <button class="rounded-3xl border-customDarkBlue bg-customDarkBlue text-white px-8 py-3 text-2xl font-bold shadow hover:bg-clifford focus:bg-clifford transition-colors focus:outline-none focus:ring-2 focus:ring-accent">S/.30.00</button>
             </div>
-
-            <div class="flex flex-col gap-4">
-                <label class="text-xl font-light" htmlFor="name">Full Name</label>
-                <input class="border-none p-2 rounded-xl max-w-lg" type="text" id="name" name="name"
-                    aria-label="Enter your full name" placeholder="John Doe" required />
+            <div class="flip-back flex flex-col items-center justify-center bg-customDarkBlue rounded-xl p-8 text-contrast h-full">
+              <h4 class="text-2xl font-bold mb-2">Para familias que lo quieren todo</h4>
+              <p class="text-lg font-light text-center">Disfruta de acceso ilimitado, personalización total y soporte prioritario para tu familia.</p>
+              <button class="mt-6 rounded-3xl border-2 border-contrast bg-transparent text-contrast px-8 py-3 text-xl font-bold shadow hover:bg-contrast hover:text-customDarkBlue focus:bg-contrast focus:text-customDarkBlue transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Elegir Pro</button>
             </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-lg font-bold py-8 text-customDarkBlue">
+        Encuentra el plan perfecto para tus necesidades de cuidado infantil. Cada opción está diseñada para darte herramientas y flexibilidad para conectar con cuidadores y mejorar tu experiencia.
+      </p>
+    </section>
 
-            <div class="flex flex-col gap-4">
-                <label class="text-xl font-light" htmlFor="phone">Phone Number</label>
-                <input class="border-none p-2 rounded-xl max-w-lg" type="tel" id="phone" name="phone"
-                    aria-label="Enter your phone number" placeholder="+1234567890" required />
+    <!-- Reseñas de clientes -->
+    <section class="container mx-auto px-4 flex flex-col justify-center items-center gap-10 py-16" aria-labelledby="customer-reviews-heading" role="region">
+      <h2 id="customer-reviews-heading" class="text-3xl sm:text-5xl text-center font-bold text-customDarkBlue mb-8">Reseñas de clientes</h2>
+      <div class="flex flex-col md:grid grid-cols-12 lg:max-w-[1200px] mx-auto gap-6">
+        <div class="col-span-12 md:col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-4 bg-white shadow-sm" aria-labelledby="review-1-heading">
+          <div class="flex flex-col items-center justify-center">
+            <img src="./images/Customer1.png" alt="Imagen de cliente satisfecho" class="block lg:max-h-[200px] w-auto p-4 rounded-full" loading="lazy" />
+          </div>
+          <h3 id="review-1-heading" class="text-2xl font-light text-clifford text-center bg-customVerySkyBlue py-2 px-4 rounded-xl">Servicio excepcional</h3>
+          <p class="font-light text-base sm:text-lg text-center text-dark">“Esta plataforma ha transformado la forma en que gestiono el cuidado de mis hijos. Ahora conecto con niñeras y tutores sin complicaciones, ¡no quiero usar otro servicio!”</p>
+        </div>
+        <div class="col-span-12 md:col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-4 bg-white shadow-sm" aria-labelledby="review-2-heading">
+          <div class="flex flex-col items-center justify-center">
+            <img src="./images/Customer2.png" alt="Imagen de cliente satisfecho" class="block lg:max-h-[200px] w-auto p-4 rounded-full" loading="lazy" />
+          </div>
+          <h3 id="review-2-heading" class="text-2xl font-light text-clifford text-center bg-customVerySkyBlue py-2 px-4 rounded-xl">Gestión sin esfuerzo</h3>
+          <p class="font-light text-base sm:text-lg text-center text-dark">“Gestionar solicitudes de cuidado nunca fue tan fácil. La plataforma se encarga de todo y yo me enfoco en el bienestar de mis hijos.”</p>
+        </div>
+        <div class="col-span-12 md:col-span-4 border-customBlue border-4 rounded-xl p-8 flex flex-col justify-center items-center gap-4 bg-white shadow-sm" aria-labelledby="review-3-heading">
+          <div class="flex flex-col items-center justify-center">
+            <img src="./images/Customer3.png" alt="Imagen de cliente satisfecho" class="block lg:max-h-[200px] w-auto p-4 rounded-full" loading="lazy" />
+          </div>
+          <h3 id="review-3-heading" class="text-2xl font-light text-clifford text-center bg-customVerySkyBlue py-2 px-4 rounded-xl">Solución que ahorra tiempo</h3>
+          <p class="font-light text-base sm:text-lg text-center text-dark">“Con esta plataforma ahorro horas cada día. Puedo gestionar solicitudes y reservas 24/7 y nunca me falta un cuidador o tutor cuando lo necesito.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="container mx-auto flex flex-col justify-center items-center gap-10 pb-16" aria-labelledby="contact-heading" role="region">
+      <h2 id="contact-heading" class="text-3xl sm:text-5xl text-center font-bold text-customDarkBlue mb-8">Contacto</h2>
+      <div class="bg-customVerySkyBlue min-w-[320px] md:min-w-[500px] rounded-lg p-8 shadow-lg w-full max-w-lg">
+        <form class="flex flex-col gap-4" aria-labelledby="contact-form-heading" autocomplete="off">
+          <div class="flex flex-col items-center justify-center gap-4">
+            <div class="h-20 w-20 rounded-full bg-white p-4 flex justify-center items-center shadow">
+              <img src="./images/favicon.png" alt="Logo SafeChild" width="48" height="48" loading="lazy" />
             </div>
-
-            <div class="flex flex-col gap-4">
-                <label class="text-xl font-light" htmlFor="message">Your Message</label>
-                <textarea class="border-none p-2 rounded-xl max-w-lg" id="message" name="message"
-                    aria-label="Enter your message" placeholder="How can we assist you?" required></textarea>
-            </div>
-
-            <button type="submit" class="bg-orange-400 text-white p-2 rounded-3xl font-light text-xl">Send Message</button>
+            <h3 id="contact-form-heading" class="text-xl sm:text-2xl font-bold text-black text-center">Contáctate con SafeChild</h3>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-lg font-light" for="name">Nombre completo</label>
+            <input class="border-none p-2 rounded-xl max-w-lg focus:outline-none focus:ring-2 focus:ring-accent" type="text" id="name" name="name" aria-label="Ingresa tu nombre completo" placeholder="Juan Pérez" required />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-lg font-light" for="phone">Teléfono</label>
+            <input class="border-none p-2 rounded-xl max-w-lg focus:outline-none focus:ring-2 focus:ring-accent" type="tel" id="phone" name="phone" aria-label="Ingresa tu teléfono" placeholder="+51987654321" required />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-lg font-light" for="message">Mensaje</label>
+            <textarea class="border-none p-2 rounded-xl max-w-lg focus:outline-none focus:ring-2 focus:ring-accent" id="message" name="message" aria-label="Ingresa tu mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+          </div>
+          <button type="submit" class="bg-accent text-white px-6 py-3 rounded-3xl font-semibold text-lg shadow hover:bg-orange-500 focus:bg-orange-500 transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Enviar mensaje</button>
         </form>
-    </div>
-</section>
+      </div>
+    </section>
 
-    <footer class="bg-white" aria-labelledby="footer-heading">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between py-5 px-4 gap-8">
-
-            <a href="/" class="flex flex-row items-center justify-center gap-2 p-4" aria-label="Inicio">
-                <div class="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-full p-2 flex justify-center items-center">
-                    <img src="./images/favicon.png" alt="Logo" class="max-w-full max-h-full" />
-                </div>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-customBlue" aria-labelledby="footer-heading" role="contentinfo">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-between py-8 px-4 gap-8">
+        <a href="/" class="flex flex-row items-center gap-2 p-4 focus:outline-none focus:ring-2 focus:ring-accent rounded" aria-label="Inicio SafeChild">
+          <div class="h-12 w-12 sm:h-16 sm:w-16 rounded-full p-2 flex justify-center items-center bg-customBlue shadow">
+            <img src="./images/favicon.png" alt="Logo SafeChild" class="max-w-full max-h-full" width="48" height="48" loading="lazy" />
+          </div>
+          <span class="text-xl font-bold text-customBlue hidden sm:inline">SafeChild</span>
+        </a>
+        <nav aria-label="Enlaces principales del pie de página">
+          <ul class="flex flex-row flex-wrap justify-center gap-8 md:gap-12">
+            <li>
+              <a class="font-bold text-lg text-customDarkBlue hover:text-accent focus:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent" href="#contact" aria-label="Ir a Soporte">Soporte</a>
+              <ul>
+                <li><a href="tel:+578203548" class="text-customBlue hover:text-accent focus:text-accent transition-colors" aria-label="Llamar a soporte SafeChild">+578203548</a></li>
+                <li><a href="mailto:support.safechild@gmail.com" class="text-customBlue hover:text-accent focus:text-accent transition-colors" aria-label="Correo soporte SafeChild">support.safechild@gmail.com</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="font-bold text-lg text-customDarkBlue hover:text-accent focus:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent" href="#subscriptions" aria-label="Ir a Membresía">Membresía</a>
+              <ul>
+                <li><a href="#subscriptions" class="text-customBlue hover:text-accent focus:text-accent transition-colors" aria-label="Planes de membresía">Planes</a></li>
+                <li><a href="/" class="text-customBlue hover:text-accent focus:text-accent transition-colors" aria-label="Iniciar sesión en SafeChild">Iniciar sesión</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="font-bold text-lg text-customDarkBlue hover:text-accent focus:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent" href="#about" aria-label="Ir a Sobre Nosotros">Sobre Nosotros</a>
+              <ul>
+                <li><a href="#contact" class="text-customBlue hover:text-accent focus:text-accent transition-colors" aria-label="Contacto SafeChild">Contacto</a></li>
+                <li><a href="#service" class="text-customBlue hover:text-accent focus:text-accent transition-colors" aria-label="¿Por qué elegir SafeChild?">¿Por qué elegirnos?</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="flex flex-col items-center gap-2" aria-labelledby="follow-us">
+          <h4 id="follow-us" class="font-bold text-lg text-customDarkBlue">Síguenos</h4>
+          <div class="flex flex-row gap-4">
+            <a href="https://x.com/" aria-label="Twitter SafeChild" class="focus:outline-none focus:ring-2 focus:ring-accent rounded">
+              <img src="./images/twitter.png" alt="Logo Twitter" class="h-8 w-8" loading="lazy" />
             </a>
+            <a href="https://facebook.com/" aria-label="Facebook SafeChild" class="focus:outline-none focus:ring-2 focus:ring-accent rounded">
+              <img src="./images/fb.png" alt="Logo Facebook" class="h-8 w-8" loading="lazy" />
+            </a>
+            <a href="https://www.instagram.com/#" aria-label="Instagram SafeChild" class="focus:outline-none focus:ring-2 focus:ring-accent rounded">
+              <img src="./images/instagram.png" alt="Logo Instagram" class="h-8 w-8" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+  <!-- JS mínimo para menú, scroll suave y tarjetas flip -->
+  <script>
+    // Menú hamburguesa
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.hidden = false;
+      mobileMenu.style.opacity = '1';
+      mobileMenu.style.pointerEvents = 'auto';
+      document.body.classList.add('no-scroll');
+      navToggle.setAttribute('aria-expanded', 'true');
+    });
+    navClose.addEventListener('click', () => {
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.pointerEvents = 'none';
+      setTimeout(() => { mobileMenu.hidden = true; }, 300);
+      document.body.classList.remove('no-scroll');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+    // Cerrar menú móvil al hacer click en un enlace
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navClose.click();
+      });
+    });
 
+    // Flip de tarjetas en hover/focus
+    document.querySelectorAll('.flip-card').forEach(card => {
+      card.addEventListener('mouseenter', () => card.classList.add('flipped'));
+      card.addEventListener('mouseleave', () => card.classList.remove('flipped'));
+      card.addEventListener('focusin', () => card.classList.add('flipped'));
+      card.addEventListener('focusout', () => card.classList.remove('flipped'));
+    });
 
-                <nav aria-label="Enlaces principales">
-                    <ul class="flex flex-row justify-center gap-10 pb-8 md:pb-0">
-                        <li class="flex flex-col gap-4">
-                            <a class="font-bold text-xl" href="#contact" aria-label="Ir a la sección de Soporte">Support</a>
-                            <ul>
-                                <li><a href="tel:+578203548"
-                                        aria-label="Llamar al soporte de Pawfect Care">+578203548</a></li>
-                                <li><a href="mailto:support.safechild@gmail.com"
-                                        aria-label="Enviar un correo al soporte de Pawfect Care">support.safechild@gmail.com</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="flex flex-col gap-4">
-                            <a class="font-bold text-xl" href="#" aria-label="Ir a la sección de Servicios">Services</a>
-                            <ul>
-                                <li><a href="#subscriptions" aria-label="Información sobre Membresía">Membership</a></li>
-                                <li><a href="/" aria-label="Iniciar sesión en Pawfect Care">Sign In</a></li>
-                            </ul>
-                        </li>
-                        <li class="flex flex-col gap-4">
-                            <a class="font-bold text-xl" href="#" aria-label="Ir a la sección de Nosotros">About Us</a>
-                            <ul>
-                                <li><a href="#contact" aria-label="Contacta con Pawfect Care">Contact</a></li>
-                                <li><a href="#service" aria-label="¿Por qué elegir Pawfect Care?">Why Choose Us?</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+    // Scroll suave para anclas
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
 
-                <div class="flex flex-col items-center gap-4" aria-labelledby="follow-us">
-                    <h4 id="follow-us" class="font-bold text-xl">Follow Us</h4>
-                    <div class="flex flex-row gap-4">
-                        <a href="https://x.com/" aria-label="Follow  Pawfect Care in Twitter">
-                            <div class="h-16 w-16 p-4 flex justify-center items-center">
-                                <img src="./images/twitter.png" alt="Logo de Twitter" />
-                            </div>
-                        </a>
-                        <a href="https://facebook.com/" aria-label="Follow a Pawfect Care in Facebook">
-                            <div class="h-16 w-16 p-4 flex justify-center items-center">
-                                <img src="./images/fb.png" alt="Logo de Facebook" />
-                            </div>
-                        </a>
-                        <a href="https://www.instagram.com/#" aria-label="Follow a Pawfect Care in Instagram">
-                            <div class="h-16 w-16 p-4 flex justify-center items-center">
-                                <img src="./images/instagram.png" alt="Logo de Instagram" />
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </main>
+    // Sombra del header al hacer scroll
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('header-shadow');
+      } else {
+        header.classList.remove('header-shadow');
+      }
+    });
+  </script>
 </body>
-
 </html>
